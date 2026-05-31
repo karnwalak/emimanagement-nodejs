@@ -26,7 +26,7 @@ export default function Login() {
 
     try {
       const res = await authApi.login(form);
-      const { token, user } = res.data;
+      const { token, user } = res.data.data;
       login(token, user);
       navigate('/dashboard');
     } catch (err) {

@@ -23,8 +23,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const storedUser = localStorage.getItem('emi_user');
 
     if (storedToken && storedUser) {
-      setToken(storedToken);
-      setUser(JSON.parse(storedUser));
+      try {
+        setToken(storedToken);
+        setUser(JSON.parse(storedUser));
+      } catch {
+        localStorage.removeItem('emi_token');
+        localStorage.removeItem('emi_user');
+        setToken(null);
+        setUser(null);
+        setIsLoading(false);
+        return;
+      }
+
       // Verify token is still valid
       authApi.me()
         .then((res) => setUser(res.data.data))

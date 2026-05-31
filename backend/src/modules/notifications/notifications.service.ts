@@ -36,7 +36,7 @@ export class NotificationsService {
         ...options,
       });
     } catch (err) {
-      this.logger.error(`Failed to send email to ${options.to}: ${err.message}`);
+      this.logger.error(`Failed to send email to ${options.to}: ${err instanceof Error ? err.message : String(err)}`);
       throw err;
     }
   }

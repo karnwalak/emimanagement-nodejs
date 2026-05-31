@@ -26,7 +26,7 @@ export default function Register() {
 
     try {
       const res = await authApi.register(form);
-      const { token, user } = res.data;
+      const { token, user } = res.data.data;
       login(token, user);
       navigate('/dashboard');
     } catch (err) {
