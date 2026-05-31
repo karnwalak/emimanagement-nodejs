@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 20px; }
+    .container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .header { background: #4f46e5; color: white; padding: 24px 32px; }
+    .badge { display: inline-block; padding: 4px 12px; border-radius: 99px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
+    .badge-urgent { background: #fee2e2; color: #dc2626; }
+    .badge-high { background: #fef3c7; color: #d97706; }
+    .badge-medium { background: #dbeafe; color: #2563eb; }
+    .badge-low { background: #dcfce7; color: #16a34a; }
+    .detail-row { padding: 10px 0; border-bottom: 1px solid #e5e7eb; }
+    .message-box { background: #f9fafb; padding: 16px; border-radius: 4px; margin: 16px 0; white-space: pre-wrap; }
+    .footer { background: #f9fafb; padding: 16px 32px; text-align: center; font-size: 12px; color: #6b7280; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 style="margin:0;font-size:20px;">New Contact Form Submission</h1>
+    </div>
+    <div style="padding: 32px;">
+      <p><span class="badge badge-{{priority}}">{{priority}}</span>&nbsp;&nbsp;Ticket #{{id}}</p>
+      <div class="detail-row"><strong>Name:</strong> {{name}}</div>
+      <div class="detail-row"><strong>Email:</strong> {{email}}</div>
+      <div class="detail-row"><strong>Subject:</strong> {{subject}}</div>
+      <div class="detail-row"><strong>Submitted:</strong> {{submittedAt}}</div>
+      <p><strong>Message:</strong></p>
+      <div class="message-box">{{message}}</div>
+    </div>
+    <div class="footer">EMI Management Admin Panel</div>
+  </div>
+</body>
+</html>

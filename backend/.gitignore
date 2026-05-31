@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+uploads/loan_documents/*
+!uploads/loan_documents/.gitkeep
+coverage/
+*.log
